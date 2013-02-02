@@ -24,15 +24,12 @@ end
 
 def pop_hood(f)
   content = File.read(f)
-  tokenized_content = tokenize content
-  parsed_content = parse content
-  compiled_content = compile content
   write_header "TOKENIZATION"
-  pp tokenized_content
-  write_header "PARSING"
-  pp parsed_content
+  pp (tokenize content)
+  write_header "PARSED - ABSTRACT SYNTAX TREE"
+  pp (parse content)
   write_header "BYTECODE"
-  puts compiled_content
+  puts (compile content)
 end
 
 ARGV.each do |a|
