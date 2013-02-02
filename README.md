@@ -2,7 +2,7 @@ To run:
 
 ruby hood_pop.rb ruby_file 
 
-This will output to the screen the following data:
+This will output to the screen the following data:<p>
      1. Tokens in the file<p>
      2. Parsing results of the file (an abstract syntax tree)<p>
      3. Bytecode after compilation<p>
