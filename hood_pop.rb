@@ -37,7 +37,7 @@ end
 
 ARGV.each do |a|
   write_header "File: #{a}"
-  successp = pop_hood a
+  pop_hood a
 end
 
 
