@@ -1,11 +1,14 @@
 require 'ripper'
 require 'pp'
 
-def write_to_file(file, data)
-  # 40.times print '-'
-  pp data
-  # 40.times print '-'
-end
+def write_header(title)
+  puts
+  80.times {print('-')}
+  puts
+  puts title
+  80.times {print('-')}
+  puts
+end  
 
 def parse(content)
   Ripper.sexp(content)
@@ -24,15 +27,17 @@ def pop_hood(f)
   tokenized_content = tokenize content
   parsed_content = parse content
   compiled_content = compile content
-  write_to_file("a", tokenized_content)
-  write_to_file("a", parsed_content)
-  write_to_file("a", compiled_content)
+  write_header "TOKENIZATION"
+  pp tokenized_content
+  write_header "PARSING"
+  pp parsed_content
+  write_header "BYTECODE"
+  puts compiled_content
 end
 
 ARGV.each do |a|
-  print "Popping hood of #{a}... "
+  write_header "File: #{a}"
   successp = pop_hood a
-  puts (successp) ? 'done!' : 'had a problem!'
 end
 
 
