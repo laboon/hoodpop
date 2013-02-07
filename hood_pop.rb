@@ -3,10 +3,10 @@ require 'pp'
 
 def write_header(title)
   puts
-  80.times {print('-')}
+  print '-'*80
   puts
   puts title
-  80.times {print('-')}
+  print '-'*80
   puts
 end  
 
